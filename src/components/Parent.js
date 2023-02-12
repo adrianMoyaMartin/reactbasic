@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import Button from "./Button";
+import PostContainer from "./PostContainer";
 
 const Parent = ({ children, ...rest }) => {
   const [posts, setPosts] = useState([]);
+
+  //   useEffect(() => {
+  //     console.log({ posts });
+  //   }, [posts]);
 
   const fetchData = () => {
     console.log("ENTRA");
@@ -22,16 +28,7 @@ const Parent = ({ children, ...rest }) => {
       <Button color="secondary" parentCallback={fetchData}>
         Fetch array from an api
       </Button>
-
-      <div className="posts-container">
-        {posts.map((post) => {
-          return (
-            <div className="post-card" key={post}>
-              <h2 className="post-title">{post}</h2>
-            </div>
-          );
-        })}
-      </div>
+      <PostContainer posts={posts}></PostContainer>
     </div>
   );
 };
