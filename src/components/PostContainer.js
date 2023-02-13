@@ -1,7 +1,9 @@
 //import { useState, useEffect } from "react";
 import { Space, List } from "antd";
+import useStorage from "/Users/adrianmoya/Documents/GitHub/reactbasic/src/store/states";
 
-const PostContainer = ({ children, posts, parentCallback, ...rest }) => {
+const PostContainer = ({ children, ...rest }) => {
+  const data = useStorage((state) => state.data);
   // const [state, setState] = useState(null);
   // useEffect(() => {
   //   setState(posts);
@@ -16,7 +18,7 @@ const PostContainer = ({ children, posts, parentCallback, ...rest }) => {
         style={{ width: "1000px" }}
         size="small"
         bordered
-        dataSource={posts}
+        dataSource={data}
         renderItem={(item) => (
           <List.Item>{item.Name + " " + item.surname}</List.Item>
         )}
