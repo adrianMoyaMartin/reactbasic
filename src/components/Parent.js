@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Button from "./Button";
+import ButtonMain from "./Button";
 import PostContainer from "./PostContainer";
 
 const Parent = ({ children, ...rest }) => {
@@ -25,9 +25,9 @@ const Parent = ({ children, ...rest }) => {
   console.log(posts);
   return (
     <div>
-      <Button color="secondary" parentCallback={fetchData}>
+      <ButtonMain color="secondary" parentCallback={fetchData}>
         Fetch array from an api
-      </Button>
+      </ButtonMain>
       <PostContainer posts={posts}></PostContainer>
     </div>
   );

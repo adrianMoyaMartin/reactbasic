@@ -1,6 +1,9 @@
 import "./App.css";
-
+import { Typography } from "antd";
 import Parent from "./components/Parent";
+
+const { Title } = Typography;
+
 //import { useState, useEffect } from "react";
 
 function App() {
@@ -19,9 +22,9 @@ function App() {
   // }, []);
   return (
     <div className="App">
-      <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-blue-600 underline">
+      <Title mark underline>
         Fetch from an api
-      </h1>
+      </Title>
       <Parent></Parent>
 
       <p id="textDisp" className="text-3xl my-10"></p>
