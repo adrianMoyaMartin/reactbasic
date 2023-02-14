@@ -1,11 +1,9 @@
 import { create } from "zustand";
+import { apiData } from "./storeApiData";
+import { countData } from "./storeCounter";
 
-const useStorage = create((set) => ({
-  data: [],
-  getData: async () => {
-    let dt = await fetch("http://0.0.0.0:3000");
-    let res = await dt.json();
-    set({ data: res });
-  },
+const useStorage = create((...a) => ({
+  ...apiData(...a),
+  ...countData(...a),
 }));
 export default useStorage;

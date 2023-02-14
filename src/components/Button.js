@@ -3,7 +3,6 @@ import useStorage from "/Users/adrianmoya/Documents/GitHub/reactbasic/src/store/
 
 const ButtonMain = ({ children, ...rest }) => {
   const getData = useStorage((state) => state.getData);
-
   return (
     <Button
       className="custom-buttom-props"
